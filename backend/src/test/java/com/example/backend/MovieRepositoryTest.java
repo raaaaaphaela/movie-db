@@ -73,4 +73,22 @@ class MovieRepositoryTest {
         assertNull(actual);
     }
 
+    @Test
+    public void addMovie_whenSuccessful_returnNewMovie () {
+        // given
+        Movie movie = new Movie();
+        movie.setTitle("Lion King");
+        movie.setImageUrl("https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg");
+        movie.setYear(1994);
+
+        MovieRepository repository = new MovieRepository(new ArrayList<>());
+
+        // when
+        Movie actual = repository.addMovie(movie);
+        movie.setId(1);
+
+        // then
+        assertEquals(movie, actual);
+    }
+
 }

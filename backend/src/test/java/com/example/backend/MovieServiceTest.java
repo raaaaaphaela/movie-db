@@ -74,4 +74,26 @@ class MovieServiceTest {
         assertNull(actual);
     }
 
+    @Test
+    public void addMovie_whenSuccessful_returnNewMovie () {
+        // given
+        Movie movie = new Movie();
+        movie.setTitle("Lion King");
+        movie.setImageUrl("https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg");
+        movie.setYear(1994);
+
+        Movie movie2 = new Movie();
+        movie2.setId(1);
+        movie2.setTitle("Lion King");
+        movie2.setImageUrl("https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg");
+        movie2.setYear(1994);
+
+        when(repository.addMovie(movie)).thenReturn(movie2);
+        // when
+        Movie actual = repository.addMovie(movie);
+
+        // then
+        assertEquals(movie2, actual);
+    }
+
 }
