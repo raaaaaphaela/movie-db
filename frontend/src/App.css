@@ -9,8 +9,8 @@
 }
 
 .header {
-    background-color: cornflowerblue;
-    padding: 2rem 0;
+    background-color: darkblue;
+    padding: 1rem 0;
     margin-bottom: 2rem;
     color: white;
 }
@@ -56,12 +56,26 @@
     padding: 0.5rem;
 }
 
-.movie-form button {
+.btn {
     margin-top: 1rem;
     padding: .5rem 1rem;
-    background-color: cornflowerblue;
     border-radius: 5px;
-    border: 1px solid cornflowerblue;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-grey {
+    border: 1px solid darkgray;
+    color: white;
+    background-color: darkgray;
+}
+
+.btn-blue {
+    border: 1px solid darkblue;
+    color: white;
+    background-color: darkblue;
+
 }
 
 @media (min-width: 600px) {

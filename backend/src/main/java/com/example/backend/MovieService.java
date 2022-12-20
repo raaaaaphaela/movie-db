@@ -22,4 +22,9 @@ public class MovieService {
     public Movie addMovie(Movie newMovie) {
         return movieRepository.addMovie(newMovie);
     }
+
+    public void deleteMovie(int id) {
+        movieRepository.deleteMovie(id);
+
+    }
 }

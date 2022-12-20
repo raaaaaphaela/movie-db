@@ -36,9 +36,12 @@ public class MovieRepository {
             newMovie.setId(newID);
             movies.add(newMovie);
             return getMovieById(newID);
-        }
-        else {
+        } else {
             return null;
         }
+    }
+
+    public void deleteMovie(int id) {
+        movies.removeIf(movie -> movie.getId() == id);
     }
 }

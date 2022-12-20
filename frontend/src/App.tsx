@@ -5,7 +5,7 @@ import NewMovie from "./NewMovie";
 import MovieCard from "./MovieCard";
 
 export type Movie = {
-    "id"?: number;
+    "id": number;
     "title": string;
     "imageUrl": string;
     "year": number;
@@ -30,7 +30,7 @@ function App() {
             <input className={"input"} type="text" placeholder={"Film suchen"}/>
             <div className={"gallery"}>
                 {movies.length === 0 ? <p>Keine Filme vorhanden...</p> : movies.map(movie => {
-                    return (<MovieCard key={movie.id} imageUrl={movie.imageUrl} title={movie.title} year={movie.year}/>)
+                    return (<MovieCard key={movie.id} {...movie}/>)
                 })}
             </div>
             <NewMovie/>

@@ -91,4 +91,25 @@ class MovieRepositoryTest {
         assertEquals(movie, actual);
     }
 
+    @Test
+    public void deleteMovie_whenSuccessful_listShouldBeWithoutIt () {
+        // given
+        Movie movie = new Movie();
+        movie.setId(1);
+        movie.setTitle("Lion King");
+        movie.setImageUrl("https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg");
+        movie.setYear(1994);
+
+        List<Movie> movies = new ArrayList<>();
+        movies.add(movie);
+
+        MovieRepository repository = new MovieRepository(movies);
+
+        // when
+        repository.deleteMovie(1);
+
+        // then
+        assertEquals(new ArrayList<>(), movies);
+    }
+
 }
