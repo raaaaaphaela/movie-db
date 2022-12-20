@@ -1,10 +1,7 @@
 package com.example.backend;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,10 @@ public class MovieController {
     @GetMapping("/{id}")
     public Movie getMovieById (@PathVariable String id) {
         return movieService.getMovieById(Integer.parseInt(id));
+    }
+
+    @PostMapping
+    public Movie addMovie (@RequestBody Movie newMovie) {
+        return movieService.addMovie(newMovie);
     }
 }

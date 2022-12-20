@@ -18,4 +18,8 @@ public class MovieService {
     public Movie getMovieById(int id) {
         return movieRepository.getMovieById(id);
     }
+
+    public Movie addMovie(Movie newMovie) {
+        return movieRepository.addMovie(newMovie);
+    }
 }

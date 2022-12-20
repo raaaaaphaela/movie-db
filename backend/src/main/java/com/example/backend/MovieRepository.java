@@ -29,4 +29,16 @@ public class MovieRepository {
     public Movie getMovieById(int id) {
         return movies.stream().filter(movie -> id == movie.getId()).findFirst().orElse(null);
     }
+
+    public Movie addMovie(Movie newMovie) {
+        int newID = movies.size() + 1;
+        if (newMovie != null) {
+            newMovie.setId(newID);
+            movies.add(newMovie);
+            return getMovieById(newID);
+        }
+        else {
+            return null;
+        }
+    }
 }

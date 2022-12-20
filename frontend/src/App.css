@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-db {
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+    background-color: cornflowerblue;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-card {
+    width: 10rem;
+    margin: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-card img {
+    width: 100%;
+}
+
+.movie-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
+    width: 80%;
+    padding: 1rem;
+    border: 1px solid grey;
+    margin: 2rem auto;
+}
+
+.movie-form-input {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.movie-form-input input, .input {
+    padding: 0.5rem;
+}
+
+.movie-form button {
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    border: 1px solid cornflowerblue;
+}
+
+@media (min-width: 600px) {
+    .movie-form {
+        width: 40%;
+    }
+
 }
