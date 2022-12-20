@@ -14,6 +14,7 @@ export type Movie = {
 function App() {
 
     const [movies, setMovies] = useState<Movie[]>([]);
+    const [filter, setFilter] = useState<string>("");
 
     useEffect(() => {
         (async () => {
@@ -27,11 +28,18 @@ function App() {
             <div className={"header"}>
                 <h1>Movie DB</h1>
             </div>
-            <input className={"input"} type="text" placeholder={"Film suchen"}/>
+            <input className={"input"}
+                   type="text"
+                   name="filter"
+                   placeholder={"Film suchen"}
+                   onChange={(e) => setFilter(e.target.value)}/>
             <div className={"gallery"}>
-                {movies.length === 0 ? <p>Keine Filme vorhanden...</p> : movies.map(movie => {
-                    return (<MovieCard key={movie.id} {...movie}/>)
-                })}
+                {movies.length === 0 ?
+                    <p>Keine Filme vorhanden...</p> :
+                    movies.filter(movie => movie.title.toLowerCase().includes(filter.toLowerCase()))
+                        .map(movie => {
+                            return (<MovieCard key={movie.id} {...movie}/>)
+                        })}
             </div>
             <NewMovie/>
         </div>
