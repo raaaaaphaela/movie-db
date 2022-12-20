@@ -8,9 +8,9 @@ export default function MovieCard({id, imageUrl, title, year}: {
     year: number
 }) {
 
-    async function deleteMovie () {
+    async function deleteMovie() {
         try {
-        await axios.delete("/api/movies/" + id);
+            await axios.delete("/api/movies/" + id);
             window.location.reload();
 
         } catch (e) {
