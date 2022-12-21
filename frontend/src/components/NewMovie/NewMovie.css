@@ -1,0 +1,29 @@
+.movie-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
+    width: 80%;
+    padding: 1rem;
+    border: 1px solid grey;
+    margin: 2rem auto;
+}
+
+.movie-form-input {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.movie-form-input input, .input {
+    padding: 0.5rem;
+}
+
+@media (min-width: 600px) {
+    .movie-form {
+        width: 40%;
+    }
+}

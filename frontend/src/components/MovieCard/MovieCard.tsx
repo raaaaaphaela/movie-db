@@ -1,7 +1,7 @@
 import React from "react";
-import axios from "axios";
-import MovieDetails from "./MovieDetails/MovieDetails";
-import DeleteDialog from "./DeleteDialog/DeleteDialog";
+import "./MovieCard.css";
+import MovieDetails from "../MovieDetails/MovieDetails";
+import DeleteDialog from "../DeleteDialog/DeleteDialog";
 
 export default function MovieCard({id, imageUrl, title, year}: {
     id: number,

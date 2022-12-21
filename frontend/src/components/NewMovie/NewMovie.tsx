@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./NewMovie.css";
 import axios from "axios";
 
 type NewMovie = {
