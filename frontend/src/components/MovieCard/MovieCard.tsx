@@ -13,9 +13,11 @@ export default function MovieCard({id, imageUrl, title, year}: {
     return (
         <div className={"movie-card"}>
             <img src={imageUrl} alt=""/>
-            <p>{title}</p>
-            <DeleteDialog id={id} title={title}/>
-            <MovieDetails id={id} title={title} imageUrl={imageUrl} year={year}/>
+            <div>
+                <p>{title}</p>
+                <DeleteDialog id={id} title={title}/>
+                <MovieDetails id={id} title={title} imageUrl={imageUrl} year={year}/>
+            </div>
         </div>
     )
 }

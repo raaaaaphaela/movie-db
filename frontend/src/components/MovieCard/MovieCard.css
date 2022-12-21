@@ -1,12 +1,17 @@
 .movie-card {
     width: 20rem;
     margin: 1rem;
-    padding: 1rem;
     border: 1px solid grey;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .movie-card img {
-    width: 100%;
+    margin-top: 1rem;
+    width: 15rem;
+    height: 22rem;
     margin-bottom: 1rem;
 }
 
