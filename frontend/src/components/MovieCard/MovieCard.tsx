@@ -10,10 +10,11 @@ export default function MovieCard(props: { movie: Movie }) {
     const [currentMovie, setCurrentMovie] = useState<Movie>(props.movie);
 
     const changeFavStatus = async () => {
+
+        await axios.put("/api/movies", {...currentMovie, favorite: !currentMovie.favorite});
         setCurrentMovie({
-            ...props.movie, favorite: !currentMovie.favorite
+            ...currentMovie, favorite: !currentMovie.favorite
         })
-        await axios.put("/api/movies", currentMovie);
     }
 
     return (
@@ -25,7 +26,7 @@ export default function MovieCard(props: { movie: Movie }) {
                     <DeleteDialog id={props.movie.id} title={props.movie.title}/>
                     <MovieDetails id={props.movie.id} title={props.movie.title} imageUrl={props.movie.imageUrl}
                                   year={props.movie.year}/>
-                    <div className={!currentMovie.favorite ? "favorite is-fav": "favorite"} onClick={changeFavStatus}>{!currentMovie.favorite ? <p>&#9829;</p> : <p>&#9825;</p>}</div>
+                    <div className={currentMovie.favorite ? "favorite is-fav": "favorite"} onClick={() => changeFavStatus()}>{currentMovie.favorite ? <p>&#9829;</p> : <p>&#9825;</p>}</div>
                 </div>
             </div>
         </div>

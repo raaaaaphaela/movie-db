@@ -17,10 +17,7 @@ export default function Homepage() {
     }, []);
 
     return (
-        <div className="movie-db">
-            <div className={"header"}>
-                <h1>Movie DB</h1>
-            </div>
+        <>
             <input className={"input"}
                    type="text"
                    name="filter"
@@ -35,6 +32,6 @@ export default function Homepage() {
                         })}
             </div>
             <NewMovie/>
-        </div>
+        </>
     )
 }
