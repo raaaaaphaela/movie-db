@@ -44,7 +44,7 @@ class MovieRepositoryTest {
     @Test
     public void getMovieById_whenMovieIdExists_returnMovie () {
         // given
-        Movie movie = new Movie(1, "Lion King", "https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg", 1994);
+        Movie movie = new Movie(1, "Lion King", "https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg", 1994, false);
         List<Movie> expected = new ArrayList<>();
         expected.add(movie);
 
@@ -60,7 +60,7 @@ class MovieRepositoryTest {
     @Test
     public void getMovieById_whenMovieDoesNotExists_returnNull () {
         // given
-        Movie movie = new Movie(1, "Lion King", "https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg", 1994);
+        Movie movie = new Movie(1, "Lion King", "https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg", 1994, false);
         List<Movie> expected = new ArrayList<>();
         expected.add(movie);
 

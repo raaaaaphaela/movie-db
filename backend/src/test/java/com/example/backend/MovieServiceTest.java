@@ -15,9 +15,6 @@ class MovieServiceTest {
     MovieRepository repository = mock(MovieRepository.class);
     MovieService service = new MovieService(repository);
 
-
-    // methodeName_whenXYZ_shouldXYZ
-
     @Test
     public void getAllMovies_whenListEmpty_returnEmptyList() {
         // given
@@ -34,7 +31,7 @@ class MovieServiceTest {
     @Test
     public void getAllMovies_whenListHasOneMovie_returnOneMovie() {
         // given
-        Movie movie = new Movie(1, "Lion King", "https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg", 1994);
+        Movie movie = new Movie(1, "Lion King", "https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg", 1994, false);
         List<Movie> expected = new ArrayList<>();
         expected.add(movie);
 
@@ -50,7 +47,7 @@ class MovieServiceTest {
     @Test
     public void getMovieById_whenMovieIdExists_returnMovie() {
         // given
-        Movie movie = new Movie(1, "Lion King", "https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg", 1994);
+        Movie movie = new Movie(1, "Lion King", "https://m.media-amazon.com/images/I/81ETY9fq1YL._SY445_.jpg", 1994, false);
 
         when(repository.getMovieById(1)).thenReturn(movie);
 
@@ -75,7 +72,7 @@ class MovieServiceTest {
     }
 
     @Test
-    public void addMovie_whenSuccessful_returnNewMovie () {
+    public void addMovie_whenSuccessful_returnNewMovie() {
         // given
         Movie movie = new Movie();
         movie.setTitle("Lion King");
