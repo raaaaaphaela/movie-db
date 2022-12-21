@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Component
@@ -54,5 +55,9 @@ public class MovieRepository {
             }
             return false;
         }).findFirst().orElse(null);
+    }
+
+    public List<Movie> getFavoriteMovies() {
+        return movies.stream().filter(Movie::isFavorite).collect(Collectors.toList());
     }
 }

@@ -31,4 +31,8 @@ public class MovieService {
     public Movie makeFavorite(Movie favMovie) {
         return movieRepository.makeFavorite(favMovie);
     }
+
+    public List<Movie> getFavoriteMovies() {
+        return movieRepository.getFavoriteMovies();
+    }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Homepage from "./pages/Homepage";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-
+import Favorites from "./pages/Favorites";
 
 export type Movie = {
     "id": number;
@@ -20,17 +20,17 @@ function App() {
                 <div className="movie-db">
                     <div className={"header"}>
                         <h1>Movie DB</h1>
+                        <nav id={"navigation"}>
+                            <ul>
+                                <li><Link to={"/"}>Home</Link></li>
+                                <li><Link to={"/favorites"}>Favoriten</Link></li>
+                            </ul>
+                        </nav>
                     </div>
-                    <nav>
-                        <ul>
-                            <li><Link to={"/"}>Home</Link></li>
-                            <li><Link to={"/favorites"}>Favoriten</Link></li>
-                        </ul>
-                    </nav>
                 </div>
                 <Routes>
                     <Route path={"/"} element={<Homepage/>}/>
-                    <Route path={"/favorites"} element={<Homepage/>}/>
+                    <Route path={"/favorites"} element={<Favorites/>}/>
                 </Routes>
             </BrowserRouter>
         </>

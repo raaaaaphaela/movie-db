@@ -1,8 +1,8 @@
 import MovieCard from "../components/MovieCard/MovieCard";
 import NewMovie from "../components/NewMovie/NewMovie";
 import React, {useEffect, useState} from "react";
-import axios from "axios";
 import {Movie} from "../App";
+import axios from "axios";
 
 export default function Homepage() {
 
@@ -17,12 +17,16 @@ export default function Homepage() {
     }, []);
 
     return (
-        <>
-            <input className={"input"}
-                   type="text"
-                   name="filter"
-                   placeholder={"Film suchen"}
-                   onChange={(e) => setFilter(e.target.value)}/>
+        <div className={"homepage"}>
+            <div>
+                <label htmlFor="filter">Suche: </label>
+                <input className={"input"}
+                       id={"filter"}
+                       type="text"
+                       name="filter"
+                       placeholder={"Film suchen"}
+                       onChange={(e) => setFilter(e.target.value)}/>
+            </div>
             <div className={"gallery"}>
                 {movies.length === 0 ?
                     <p>Keine Filme vorhanden...</p> :
@@ -32,6 +36,6 @@ export default function Homepage() {
                         })}
             </div>
             <NewMovie/>
-        </>
+        </div>
     )
 }

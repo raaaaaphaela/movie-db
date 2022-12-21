@@ -4,6 +4,29 @@
     box-sizing: border-box;
 }
 
+#navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width: 30%;
+    margin: 2rem auto;
+}
+
+#navigation a {
+    color: white;
+}
+
+.homepage {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.input {
+    margin-top: 2rem;
+}
 .movie-db {
     text-align: center;
 }
@@ -28,6 +51,7 @@
     padding: .5rem 1rem;
     border-radius: 5px;
 }
+
 .btn:hover {
     cursor: pointer;
 }

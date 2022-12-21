@@ -22,6 +22,11 @@ public class MovieController {
         return movieService.getMovieById(Integer.parseInt(id));
     }
 
+    @GetMapping("/favorites")
+    public List<Movie> getFavoriteMovies() {
+        return movieService.getFavoriteMovies();
+    }
+
     @PostMapping
     public Movie addMovie (@RequestBody Movie newMovie) {
         return movieService.addMovie(newMovie);
