@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import MovieDetails from "./MovieDetails/MovieDetails";
+import DeleteDialog from "./DeleteDialog/DeleteDialog";
 
 export default function MovieCard({id, imageUrl, title, year}: {
     id: number,
@@ -9,21 +10,11 @@ export default function MovieCard({id, imageUrl, title, year}: {
     year: number
 }) {
 
-    async function deleteMovie() {
-        try {
-            await axios.delete("/api/movies/" + id);
-            window.location.reload();
-
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
     return (
         <div className={"movie-card"}>
             <img src={imageUrl} alt=""/>
             <p>{title}</p>
-            <button onClick={deleteMovie} className={"btn btn-grey"}>Löschen</button>
+            <DeleteDialog id={id} title={title}/>
             <MovieDetails id={id} title={title} imageUrl={imageUrl} year={year}/>
         </div>
     )
