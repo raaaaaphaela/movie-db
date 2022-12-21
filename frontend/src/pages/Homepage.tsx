@@ -4,7 +4,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Movie} from "../App";
 
-export default function Homepage () {
+export default function Homepage() {
 
     const [movies, setMovies] = useState<Movie[]>([]);
     const [filter, setFilter] = useState<string>("");
@@ -31,7 +31,7 @@ export default function Homepage () {
                     <p>Keine Filme vorhanden...</p> :
                     movies.filter(movie => movie.title.toLowerCase().includes(filter.toLowerCase()))
                         .map(movie => {
-                            return (<MovieCard key={movie.id} {...movie}/>)
+                            return (<MovieCard key={movie.id} movie={movie}/>)
                         })}
             </div>
             <NewMovie/>

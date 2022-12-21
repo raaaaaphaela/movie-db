@@ -18,3 +18,17 @@
 .movie-card button {
     margin: 1rem .5rem;
 }
+
+.movie-card-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite {
+    font-size: 2.5rem;
+}
+
+.is-fav {
+    color: red;
+}

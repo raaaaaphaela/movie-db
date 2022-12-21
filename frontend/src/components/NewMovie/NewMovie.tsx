@@ -6,17 +6,17 @@ type NewMovie = {
     "title": string;
     "imageUrl": string;
     "year": number;
+    "favorite": boolean;
 }
 export default function NewMovie() {
 
-    const [newMovie, setNewMovie] = useState<NewMovie>({title: "", imageUrl: "", year: 0});
+    const [newMovie, setNewMovie] = useState<NewMovie>({title: "", imageUrl: "", year: 0, favorite: false});
 
     function onChange(e: React.ChangeEvent<HTMLInputElement>) {
         const targetValue: string = e.target.value;
         const targetName: string = e.target.name;
 
         setNewMovie({...newMovie, [targetName]: targetValue});
-        console.log(newMovie);
     }
 
     async function onSubmit() {

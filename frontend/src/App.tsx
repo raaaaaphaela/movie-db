@@ -9,6 +9,7 @@ export type Movie = {
     "title": string;
     "imageUrl": string;
     "year": number;
+    "favorite": boolean;
 }
 
 function App() {
