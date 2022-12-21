@@ -27,4 +27,8 @@ public class MovieService {
         movieRepository.deleteMovie(id);
 
     }
+
+    public Movie makeFavorite(Movie favMovie) {
+        return movieRepository.makeFavorite(favMovie);
+    }
 }

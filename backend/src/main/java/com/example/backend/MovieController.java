@@ -31,4 +31,9 @@ public class MovieController {
     public void addMovie (@PathVariable String id) {
          movieService.deleteMovie(Integer.parseInt(id));
     }
+
+    @PutMapping()
+    public Movie makeFavorite (@RequestBody Movie favMovie) {
+        return movieService.makeFavorite(favMovie);
+    }
 }

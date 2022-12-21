@@ -13,5 +13,6 @@ public class Movie {
     private String title;
     private String imageUrl;
     private int year;
+    private boolean isFavorite;
 
 }
