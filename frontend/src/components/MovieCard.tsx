@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import MovieDetails from "./MovieDetails/MovieDetails";
 
 export default function MovieCard({id, imageUrl, title, year}: {
     id: number,
@@ -21,8 +22,9 @@ export default function MovieCard({id, imageUrl, title, year}: {
     return (
         <div className={"movie-card"}>
             <img src={imageUrl} alt=""/>
-            <p>{title} ({year})</p>
+            <p>{title}</p>
             <button onClick={deleteMovie} className={"btn btn-grey"}>Löschen</button>
+            <MovieDetails id={id} title={title} imageUrl={imageUrl} year={year}/>
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import axios from "axios";
-import NewMovie from "./NewMovie";
-import MovieCard from "./MovieCard";
+import NewMovie from "./components/NewMovie";
+import MovieCard from "./components/MovieCard";
 
 export type Movie = {
     "id": number;
