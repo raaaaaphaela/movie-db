@@ -4,14 +4,6 @@ import Homepage from "./pages/Homepage";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Favorites from "./pages/Favorites";
 
-export type Movie = {
-    "id": number;
-    "title": string;
-    "imageUrl": string;
-    "year": number;
-    "favorite": boolean;
-}
-
 function App() {
 
     return (

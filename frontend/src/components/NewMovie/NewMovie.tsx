@@ -1,16 +1,11 @@
 import React, {useState} from "react";
 import "./NewMovie.css";
 import axios from "axios";
+import {PostMovie} from "../../Types";
 
-type NewMovie = {
-    "title": string;
-    "imageUrl": string;
-    "year": number;
-    "favorite": boolean;
-}
 export default function NewMovie() {
 
-    const [newMovie, setNewMovie] = useState<NewMovie>({title: "", imageUrl: "", year: 0, favorite: false});
+    const [newMovie, setNewMovie] = useState<PostMovie>({title: "", imageUrl: "", year: 0, favorite: false});
 
     function onChange(e: React.ChangeEvent<HTMLInputElement>) {
         const targetValue: string = e.target.value;

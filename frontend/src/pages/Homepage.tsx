@@ -1,8 +1,8 @@
 import MovieCard from "../components/MovieCard/MovieCard";
 import NewMovie from "../components/NewMovie/NewMovie";
 import React, {useEffect, useState} from "react";
-import {Movie} from "../App";
 import axios from "axios";
+import {Movie} from "../Types";
 
 export default function Homepage() {
 

@@ -3,7 +3,7 @@ import "./MovieCard.css";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import DeleteDialog from "../DeleteDialog/DeleteDialog";
 import axios from "axios";
-import {Movie} from "../../App";
+import {Movie} from "../../Types";
 
 export default function MovieCard(props: { movie: Movie }) {
 

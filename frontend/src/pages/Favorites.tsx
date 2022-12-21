@@ -1,7 +1,7 @@
-import {Movie} from "../App";
 import MovieCard from "../components/MovieCard/MovieCard";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {Movie} from "../Types";
 
 export default function Favorites() {
 
@@ -12,7 +12,6 @@ export default function Favorites() {
             setFavoriteMovies(res.data);
         })();
     })
-
 
     return (
         <>
