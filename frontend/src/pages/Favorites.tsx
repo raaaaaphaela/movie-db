@@ -6,12 +6,13 @@ import {Movie} from "../Types";
 export default function Favorites() {
 
     const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
+
     useEffect(() => {
         (async () => {
             const res = await axios.get("/api/movies/favorites");
             setFavoriteMovies(res.data);
         })();
-    })
+    }, []);
 
     return (
         <>

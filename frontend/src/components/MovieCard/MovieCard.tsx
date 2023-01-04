@@ -15,6 +15,7 @@ export default function MovieCard(props: { movie: Movie }) {
         setCurrentMovie({
             ...currentMovie, favorite: !currentMovie.favorite
         })
+        window.location.reload();
     }
 
     return (
